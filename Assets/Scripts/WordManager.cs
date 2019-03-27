@@ -31,6 +31,10 @@ public class WordManager : MonoBehaviour {
 
     public void TypeLetter(char letter)
     {
+        if(GameManager.gameHasEnded)
+        {
+            return;
+        }
         if (hasActiveWord)
         {
             //check if letter was next

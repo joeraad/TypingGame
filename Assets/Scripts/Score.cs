@@ -9,6 +9,14 @@ public class  Score : MonoBehaviour {
     {
         score++;
     }
+    public static void ResetScore()
+    {
+        score=0;
+        PlayerPrefs.SetInt("Score", score);
+    }
+
+
+
     public void SaveScores()
     {
         PlayerPrefs.SetInt("Score", score);

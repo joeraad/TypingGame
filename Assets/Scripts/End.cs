@@ -24,6 +24,7 @@ public class End : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
+
     public void Quit()
     {
         Debug.Log("Quit");
