@@ -768,7 +768,7 @@ GameObject:
   - component: {fileID: 64252878}
   - component: {fileID: 64252877}
   m_Layer: 0
-  m_Name: Key_ALT
+  m_Name: Key_LEFTALT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3685,7 +3685,7 @@ GameObject:
   - component: {fileID: 530251484}
   - component: {fileID: 530251483}
   m_Layer: 0
-  m_Name: Key_SHIFT
+  m_Name: Key_RIGHTSHIFT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7385,7 +7385,7 @@ GameObject:
   - component: {fileID: 942036723}
   - component: {fileID: 942036722}
   m_Layer: 0
-  m_Name: Key_SHIFT
+  m_Name: Key_LEFTSHIFT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7771,7 +7771,7 @@ GameObject:
   - component: {fileID: 1019796594}
   - component: {fileID: 1019796593}
   m_Layer: 0
-  m_Name: Key_CRTL
+  m_Name: Key_LEFTCRTL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11418,7 +11418,7 @@ GameObject:
   - component: {fileID: 1530634924}
   - component: {fileID: 1530634923}
   m_Layer: 0
-  m_Name: Key_CRTL
+  m_Name: Key_RIGHTCRTL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12580,6 +12580,68 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37080f50bb7b7043aee5f3f4206463b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textField: {fileID: 1480779567}
+  keyboard: {fileID: 2102765062}
+  activeKey: {fileID: 0}
+  keys:
+  - {fileID: 1079314735}
+  - {fileID: 1320083179}
+  - {fileID: 253214539}
+  - {fileID: 1323264281}
+  - {fileID: 1015031386}
+  - {fileID: 1359424909}
+  - {fileID: 1629212840}
+  - {fileID: 910354027}
+  - {fileID: 359266497}
+  - {fileID: 772442912}
+  - {fileID: 113725141}
+  - {fileID: 186371970}
+  - {fileID: 1342596382}
+  - {fileID: 2113911270}
+  - {fileID: 1202447612}
+  - {fileID: 1214842508}
+  - {fileID: 748298824}
+  - {fileID: 681316641}
+  - {fileID: 1528173135}
+  - {fileID: 1752648803}
+  - {fileID: 891677414}
+  - {fileID: 676794276}
+  - {fileID: 999191841}
+  - {fileID: 1669611418}
+  - {fileID: 430565766}
+  - {fileID: 518883680}
+  - {fileID: 674608635}
+  - {fileID: 572180218}
+  - {fileID: 1252993590}
+  - {fileID: 926985045}
+  - {fileID: 1680592800}
+  - {fileID: 1906074950}
+  - {fileID: 753136962}
+  - {fileID: 632778449}
+  - {fileID: 1367150106}
+  - {fileID: 1904281630}
+  - {fileID: 868459656}
+  - {fileID: 1751324169}
+  - {fileID: 887853279}
+  - {fileID: 2133145159}
+  - {fileID: 1373864257}
+  - {fileID: 942036720}
+  - {fileID: 1583005757}
+  - {fileID: 394711058}
+  - {fileID: 2043125034}
+  - {fileID: 1536432274}
+  - {fileID: 492203222}
+  - {fileID: 1298903885}
+  - {fileID: 1290748682}
+  - {fileID: 1930170778}
+  - {fileID: 1198583720}
+  - {fileID: 1702391771}
+  - {fileID: 530251481}
+  - {fileID: 1019796591}
+  - {fileID: 64252875}
+  - {fileID: 429408594}
+  - {fileID: 1791504026}
+  - {fileID: 1530634921}
 --- !u!4 &1727526610
 Transform:
   m_ObjectHideFlags: 0
@@ -13339,7 +13401,7 @@ GameObject:
   - component: {fileID: 1791504029}
   - component: {fileID: 1791504028}
   m_Layer: 0
-  m_Name: Key_ALT
+  m_Name: Key_RIGHTALT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
