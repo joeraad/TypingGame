@@ -5373,7 +5373,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 11.864606, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 709843276}
     characterCount: 8
@@ -12580,8 +12580,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37080f50bb7b7043aee5f3f4206463b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textField: {fileID: 1480779567}
-  keyboard: {fileID: 2102765062}
+  textField: {fileID: 709843276}
+  keyboard: {fileID: 2102765064}
   activeKey: {fileID: 0}
   keys:
   - {fileID: 1079314735}
@@ -14951,6 +14951,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2102765063}
+  - component: {fileID: 2102765064}
   m_Layer: 0
   m_Name: Keyboard
   m_TagString: Untagged
@@ -14973,6 +14974,79 @@ Transform:
   m_Father: {fileID: 1765855881}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2102765064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102765062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9daadc596ab0a64a9f944af18cde4be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  keyboard: {fileID: 1679487468}
+  activeKey: {fileID: 0}
 --- !u!1 &2113911270
 GameObject:
   m_ObjectHideFlags: 0

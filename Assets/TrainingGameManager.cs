@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TrainingGameManager :MonoBehaviour
 {
-    public GameObject textField;
-    public GameObject keyboard;
+    public TextMeshProUGUI textField;
+    private string text;
+    private int textIndex;
+    public Keyboard keyboard;
     public GameObject activeKey;
     public GameObject [] keys;
     public Dictionary<string, GameObject> Key = new Dictionary<string, GameObject>();
@@ -26,6 +29,8 @@ public class TrainingGameManager :MonoBehaviour
     void Start()
     {
         CreateDictionary();
+        text = textField.text;
+        
 
         /**
         *foreach (KeyValuePair<string, GameObject> k in Key)
@@ -36,7 +41,6 @@ public class TrainingGameManager :MonoBehaviour
 
         Debug.Log(Key.ContainsKey("`"));
         Debug.Log(Key["`"]);
-
     }
 
     // Update is called once per frame
@@ -46,10 +50,31 @@ public class TrainingGameManager :MonoBehaviour
             return;
         foreach (char letter in Input.inputString)
         {
+            CheckLetter(letter.ToString());
             ChangeColor(letter.ToString());
         }
     }
 
+
+    void CheckLetter(string letter)
+    {
+        if(textIndex>=text.Length)
+        {
+            return;
+        }
+
+
+        if (text[textIndex].Equals(letter))
+        {
+            keyboard.ChangeKeyColor(Key[letter.ToString()], true);
+            textIndex++;
+        }else
+        {
+            keyboard.ChangeKeyColor(Key[letter.ToString()], false);
+            textIndex++;
+        }
+
+    }
     void ChangeColor(string letter)
     {
         if (activeKey != null)
