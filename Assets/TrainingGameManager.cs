@@ -12,6 +12,7 @@ public class TrainingGameManager :MonoBehaviour
     public Keyboard keyboard;
     public GameObject activeKey;
     public GameObject [] keys;
+    public TrainingWordDisplay wordDisplay;
     public Dictionary<string, GameObject> Key = new Dictionary<string, GameObject>();
     private string[] keyNames= { "`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=", "BackSpace",
         "Tab", "q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "[", "]", "\\",
@@ -30,7 +31,6 @@ public class TrainingGameManager :MonoBehaviour
     {
         CreateDictionary();
         text = textField.text;
-        
 
         /**
         *foreach (KeyValuePair<string, GameObject> k in Key)
@@ -51,7 +51,7 @@ public class TrainingGameManager :MonoBehaviour
         foreach (char letter in Input.inputString)
         {
             CheckLetter(letter.ToString());
-            ChangeColor(letter.ToString());
+            
         }
     }
 
@@ -63,28 +63,23 @@ public class TrainingGameManager :MonoBehaviour
             return;
         }
 
-
-        if (text[textIndex].Equals(letter))
+        Debug.Log(text[textIndex]);
+        Debug.Log(letter);
+        Debug.Log(text[textIndex].ToString().Equals(letter.ToString()));
+        if (text[textIndex].ToString().Equals(letter.ToString()))
         {
             keyboard.ChangeKeyColor(Key[letter.ToString()], true);
+            wordDisplay.ChangeCharacterColor(textIndex,true);
             textIndex++;
         }else
         {
             keyboard.ChangeKeyColor(Key[letter.ToString()], false);
+            wordDisplay.ChangeCharacterColor(textIndex,false);
             textIndex++;
         }
 
     }
-    void ChangeColor(string letter)
-    {
-        if (activeKey != null)
-        {
-            activeKey.GetComponent<Image>().color = Color.white;
-        }
-        activeKey = Key[letter.ToString()];
-        Debug.Log(activeKey);
-        activeKey.GetComponent<Image>().color=Color.green;
-    }
+   
 
     void CreateDictionary()
     {
@@ -114,59 +109,81 @@ public class TrainingGameManager :MonoBehaviour
     }
     bool CheckCommandKeys()
     {
+        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
+        {
+            if (text[textIndex].ToString().Equals("\n"))
+            {
+                keyboard.ChangeKeyColor(Key["ENTER"], true);
+                textIndex++;
+                return true;
+            }
+            else
+            {
+                keyboard.ChangeKeyColor(Key["ENTER"], false);
+                textIndex++;
+                return true;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (text[textIndex].ToString().Equals(" "))
+            {
+                keyboard.ChangeKeyColor(Key["SPACE"], true);
+                textIndex++;
+                return true;
+            }
+            else
+            {
+                keyboard.ChangeKeyColor(Key["SPACE"], false);
+                textIndex++;
+                return true;
+            }
+            
+        } 
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
-            ChangeColor("BackSpace");
+            keyboard.ChangeKeyColor(Key["BackSpace"], true);
             return true;
         }
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            ChangeColor("Tab");
+            keyboard.ChangeKeyColor(Key["Tab"], true);
             return true;
         }
+
         if (Input.GetKeyDown(KeyCode.CapsLock))
         {
-            ChangeColor("CAPS");
-            return true;
-        }
-        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
-        {
-            ChangeColor("ENTER");
+            keyboard.ChangeKeyColor(Key["CAPS"], true);
             return true;
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            ChangeColor("LEFTSHIFT");
+            keyboard.ChangeKeyColor(Key["LEFTSHIFT"], true);
             return true;
         }
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
-            ChangeColor("RIGHTSHIFT");
+            keyboard.ChangeKeyColor(Key["RIGHTSHIFT"], true);
             return true;
         }
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            ChangeColor("LEFTCRTL");
+            keyboard.ChangeKeyColor(Key["LEFTCRTL"], true);
             return true;
         }
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
-            ChangeColor("LEFTALT");
-            return true;
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ChangeColor("SPACE");
+            keyboard.ChangeKeyColor(Key["LEFTALT"], true);
             return true;
         }
         if (Input.GetKeyDown(KeyCode.RightAlt))
         {
-            ChangeColor("RIGHTALT");
+            keyboard.ChangeKeyColor(Key["RIGHTALT"], true);
             return true;
         }
         if (Input.GetKeyDown(KeyCode.RightControl))
         {
-            ChangeColor("RIGHTCRTL");
+            keyboard.ChangeKeyColor(Key["RIGHTCRTL"], true);
             return true;
         }
         return false;
