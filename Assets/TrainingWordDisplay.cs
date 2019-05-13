@@ -12,6 +12,7 @@ public class TrainingWordDisplay : MonoBehaviour
 
     public TMP_CharacterInfo CharacterInfo;
     public GameObject panel;
+    public float panelScale = 1.1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,27 +47,46 @@ public class TrainingWordDisplay : MonoBehaviour
         float CharacterTopLeftPositionY = CharacterInfo.vertex_TL.position.y;
         float CharacterBottomRightPositionX = CharacterInfo.vertex_BR.position.x;
         float CharacterBottomRightPositionY = CharacterInfo.vertex_BR.position.y;
- */
-        float CharacterTopLeftPositionX = CharacterInfo.topLeft.x;
-        float CharacterTopLeftPositionY = CharacterInfo.topLeft.y;
-        float CharacterBottomRightPositionX = CharacterInfo.bottomLeft.x;
-        float CharacterBottomRightPositionY = CharacterInfo.bottomLeft.y;
 
         Debug.Log("These are the points:\n" + CharacterTopLeftPositionX + " " + CharacterTopLeftPositionY + "\n" + CharacterBottomRightPositionX + " " + CharacterBottomRightPositionY);
 
         Vector3 characterPosition = transform.TransformVector(((CharacterTopLeftPositionX + CharacterBottomRightPositionX) / 2), ((CharacterTopLeftPositionY + CharacterBottomRightPositionY) / 2), 0);
         Debug.Log(characterPosition);
         panel.transform.position = characterPosition;
+ */
 
         //panel.transform.position= textField.transform.localToWorldMatrix.MultiplyPoint(characterPosition);
         //textField.transform.localToWorldMatrix.MultiplyPoint(characterPosition);
 
 
         /*
-                CharacterInfo = textInfo.characterInfo[index];
-                Vector3 characterPositions=CharacterInfo.vertex_BR.position;
-                panel.transform.position = textField.transform.localToWorldMatrix.MultiplyPoint3x4(characterPositions);
         */
+
+        if (index + 1 > textInfo.characterCount)
+        {
+            CharacterInfo = textInfo.characterInfo[index];
+        }
+        else
+        {
+            CharacterInfo = textInfo.characterInfo[index + 1];
+        }
+        float CharacterTopLeftPositionX = CharacterInfo.topLeft.x;
+        float CharacterTopRightPositionX = CharacterInfo.topRight.x;
+        float CharacterTopLeftPositionY = CharacterInfo.topLeft.y;
+        float CharacterBottomLeftPositionY = CharacterInfo.bottomLeft.y;
+
+
+        RectTransform panelRectTransform = panel.GetComponent<RectTransform>();
+        Vector3 characterPositions=CharacterInfo.vertex_BR.position;
+        panel.transform.position = textField.transform.localToWorldMatrix.MultiplyPoint3x4(characterPositions);
+        panelRectTransform.sizeDelta.Set(CharacterTopLeftPositionX - CharacterTopRightPositionX, CharacterTopLeftPositionY - CharacterBottomLeftPositionY);
+        Debug.Log(panelRectTransform.sizeDelta);
+
+        panelRectTransform.sizeDelta = new Vector2((CharacterTopRightPositionX - CharacterTopLeftPositionX) * panelScale, (CharacterTopLeftPositionY - CharacterBottomLeftPositionY)* panelScale);
+        Debug.Log(CharacterTopLeftPositionX - CharacterTopRightPositionX);
+        Debug.Log(CharacterTopLeftPositionY - CharacterBottomLeftPositionY);
+        Debug.Log(panelRectTransform.sizeDelta);
+
 
         // Get the index of the material used by the current character.
         int materialIndex = textInfo.characterInfo[index].materialReferenceIndex;
